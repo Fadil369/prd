@@ -34,7 +34,7 @@ const Button: React.FC<ButtonProps> = ({
     primary: `
       bg-gradient-to-r from-primary-500 to-primary-600
       hover:from-primary-600 hover:to-primary-700
-      text-white shadow-soft
+  text-white shadow-soft
       focus:ring-primary-500
       hover:shadow-glow hover:scale-[1.02]
       active:scale-[0.98]
@@ -42,22 +42,22 @@ const Button: React.FC<ButtonProps> = ({
     secondary: `
       bg-gradient-to-r from-secondary-500 to-secondary-600
       hover:from-secondary-600 hover:to-secondary-700
-      text-white shadow-soft
+  text-white shadow-soft
       focus:ring-secondary-500
       hover:shadow-glow-gold hover:scale-[1.02]
       active:scale-[0.98]
     `,
     outline: `
-      border-2 border-primary-300 bg-white
-      hover:bg-primary-50 hover:border-primary-400
-      text-primary-700 hover:text-primary-800
-      focus:ring-primary-500
+  border-2 border-primary-300 bg-white dark:bg-transparent dark:border-neutral-700
+  hover:bg-primary-50 hover:border-primary-400 dark:hover:bg-neutral-800
+  text-primary-700 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300
+  focus:ring-primary-500
       hover:scale-[1.02] active:scale-[0.98]
     `,
     ghost: `
-      bg-transparent hover:bg-primary-50
-      text-primary-600 hover:text-primary-700
-      focus:ring-primary-500
+  bg-transparent hover:bg-primary-50 dark:hover:bg-neutral-800
+  text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300
+  focus:ring-primary-500
       hover:scale-[1.02] active:scale-[0.98]
     `,
     destructive: `

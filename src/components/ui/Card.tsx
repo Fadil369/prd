@@ -21,22 +21,22 @@ const Card: React.FC<CardProps> = ({
 
   const variantClasses = {
     default: `
-      bg-white border border-neutral-200
+  bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800
       shadow-soft
     `,
     elevated: `
-      bg-white 
-      shadow-soft-lg
-      border border-neutral-100
+  bg-white dark:bg-neutral-900
+  shadow-soft-lg
+  border border-neutral-100 dark:border-neutral-800
     `,
     outlined: `
-      bg-white border-2 border-neutral-200
-      hover:border-primary-200
+  bg-white dark:bg-neutral-900 border-2 border-neutral-200 dark:border-neutral-800
+  hover:border-primary-200 dark:hover:border-primary-400/40
     `,
     glass: `
-      glass backdrop-blur-xl
-      border border-white/20
-      bg-white/10
+  glass backdrop-blur-xl
+  border border-white/20 dark:border-white/10
+  bg-white/10 dark:bg-white/5
     `
   };
 

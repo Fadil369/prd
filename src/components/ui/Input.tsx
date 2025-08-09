@@ -33,22 +33,22 @@ const Input: React.FC<InputProps> = ({
 
   const variantClasses = {
     default: `
-      border border-neutral-300
-      bg-white
-      focus:border-primary-500 focus:ring-primary-500
-      hover:border-neutral-400
+  border border-neutral-300 dark:border-neutral-700
+  bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100
+  focus:border-primary-500 focus:ring-primary-500
+  hover:border-neutral-400 dark:hover:border-neutral-600
     `,
     filled: `
-      border border-transparent
-      bg-neutral-50
-      focus:bg-white focus:border-primary-500 focus:ring-primary-500
-      hover:bg-neutral-100
+  border border-transparent dark:border-neutral-700
+  bg-neutral-50 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100
+  focus:bg-white dark:focus:bg-neutral-900 focus:border-primary-500 focus:ring-primary-500
+  hover:bg-neutral-100 dark:hover:bg-neutral-700
     `,
     outlined: `
-      border-2 border-neutral-300
-      bg-white
-      focus:border-primary-500 focus:ring-primary-500
-      hover:border-neutral-400
+  border-2 border-neutral-300 dark:border-neutral-700
+  bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100
+  focus:border-primary-500 focus:ring-primary-500
+  hover:border-neutral-400 dark:hover:border-neutral-600
     `
   };
 

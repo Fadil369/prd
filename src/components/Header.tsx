@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Menu, X, Globe, ChevronDown } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import Button from './ui/Button';
+import ThemeToggle from './ThemeToggle';
 
 const Header: React.FC = () => {
   const { t, currentLocale, setCurrentLocale, isRTL } = useApp();
@@ -28,7 +29,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/80 border-b border-neutral-200/50">
+    <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/80 dark:bg-neutral-900/80 border-b border-neutral-200/50 dark:border-neutral-800/60">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
@@ -63,13 +64,14 @@ const Header: React.FC = () => {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center gap-4">
+            <ThemeToggle />
             {/* Language Selector */}
             <div className="relative">
               <button
                 onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
                 className={`
                   flex items-center gap-2 px-3 py-2 rounded-lg
-                  text-neutral-600 hover:text-primary-600 hover:bg-primary-50
+                  text-neutral-600 dark:text-neutral-300 hover:text-primary-600 hover:bg-primary-50 dark:hover:text-primary-400 dark:hover:bg-neutral-800
                   transition-all duration-200
                   ${isRTL ? 'font-arabic' : 'font-english'}
                 `}
@@ -83,7 +85,7 @@ const Header: React.FC = () => {
               {isLanguageDropdownOpen && (
                 <div className={`
                   absolute top-full mt-2 w-40 py-2
-                  bg-white rounded-xl shadow-soft border border-neutral-200
+                  bg-white dark:bg-neutral-900 rounded-xl shadow-soft border border-neutral-200 dark:border-neutral-800
                   z-50
                   ${isRTL ? 'end-0' : 'start-0'}
                 `}>
@@ -95,7 +97,7 @@ const Header: React.FC = () => {
                         w-full flex items-center gap-3 px-4 py-2
                         text-sm hover:bg-primary-50
                         transition-colors duration-200
-                        ${currentLocale === language.code ? 'text-primary-600 bg-primary-50' : 'text-neutral-600'}
+                        ${currentLocale === language.code ? 'text-primary-600 bg-primary-50 dark:text-primary-400 dark:bg-neutral-800' : 'text-neutral-600 dark:text-neutral-300'}
                         ${isRTL ? 'text-right font-arabic' : 'text-left font-english'}
                       `}
                     >
@@ -120,7 +122,7 @@ const Header: React.FC = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-neutral-600 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200"
+            className="md:hidden p-2 rounded-lg text-neutral-600 dark:text-neutral-300 hover:text-primary-600 hover:bg-primary-50 dark:hover:text-primary-400 dark:hover:bg-neutral-800 transition-colors duration-200"
           >
             {isMobileMenuOpen ? (
               <X className="h-6 w-6" />
@@ -197,9 +199,15 @@ const Header: React.FC = () => {
 
       {/* Backdrop for language dropdown */}
       {isLanguageDropdownOpen && (
-        <div
+        <button
+          aria-label="Close language menu"
           className="fixed inset-0 z-40"
           onClick={() => setIsLanguageDropdownOpen(false)}
+          onKeyDown={(e) => {
+            if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') {
+              setIsLanguageDropdownOpen(false);
+            }
+          }}
         />
       )}
     </header>
