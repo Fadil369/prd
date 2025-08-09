@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from '../App.tsx';
+import App from './App.tsx';
 import './index.css';
 
 // Error boundary for production
@@ -21,8 +21,8 @@ class ErrorBoundary extends React.Component<
     console.error('App Error:', error, errorInfo);
     
     // Track error in analytics
-    if (window.gtag) {
-      window.gtag('event', 'exception', {
+    if (typeof window !== 'undefined' && 'gtag' in window) {
+      (window as any).gtag('event', 'exception', {
         description: error.toString(),
         fatal: false
       });
@@ -43,7 +43,7 @@ class ErrorBoundary extends React.Component<
             </p>
             <button
               onClick={() => window.location.reload()}
-              className="bg-saudi-600 hover:bg-saudi-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+              className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
             >
               إعادة تحميل الصفحة - Reload Page
             </button>

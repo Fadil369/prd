@@ -1,32 +1,98 @@
+/* Import Google Fonts with optimal loading */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* CSS Variables for consistent theming */
 :root {
-  --saudi-green: #059669;
+  /* Colors */
+  --color-primary-50: #f0fdf4;
+  --color-primary-100: #dcfce7;
+  --color-primary-500: #22c55e;
+  --color-primary-600: #16a34a;
+  --color-primary-700: #15803d;
+  --color-secondary-500: #f59e0b;
+  --color-secondary-600: #d97706;
+  --color-accent-500: #c47d2a;
+
+  /* Legacy variables for compatibility */
+  --saudi-green: #22c55e;
   --saudi-gold: #f59e0b;
   --text-primary: #111827;
   --text-secondary: #6b7280;
   --background-primary: #ffffff;
   --background-secondary: #f9fafb;
   --border-color: #e5e7eb;
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+
+  /* Enhanced shadows */
+  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --shadow-soft: 0 2px 15px 0 rgba(0, 0, 0, 0.1);
+  --shadow-glow: 0 0 20px rgba(34, 197, 94, 0.3);
+
+  /* Radius */
+  --radius-xs: 0.125rem;
   --radius-sm: 0.25rem;
   --radius-md: 0.375rem;
   --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+
+  /* Spacing */
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --spacing-lg: 1.5rem;
   --spacing-xl: 2rem;
+  --spacing-2xl: 2.5rem;
+  --spacing-3xl: 3rem;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Typography */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* Line heights */
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
 }
 
-/* Base styles */
+/* Dark mode variables */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary: #f9fafb;
+    --text-secondary: #9ca3af;
+    --background-primary: #111827;
+    --background-secondary: #1f2937;
+    --border-color: #374151;
+  }
+}
+
+/* Enhanced base styles */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
 }
 
 body {
@@ -35,19 +101,25 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  font-feature-settings: "cv11", "ss01";
+  font-variation-settings: "opsz" 32;
 }
 
-/* Arabic font optimization */
+/* Enhanced Arabic font optimization */
 .font-arabic {
-  font-family: 'Cairo', 'Tajawal', 'Amiri', system-ui, sans-serif;
-  font-feature-settings: 'liga' 1, 'kern' 1;
+  font-family: "Cairo", "Tajawal", "Amiri", system-ui, sans-serif;
+  font-feature-settings: "liga" 1, "kern" 1, "calt" 1;
+  font-variant-ligatures: common-ligatures contextual;
+  text-rendering: optimizeLegibility;
 }
 
 .font-english {
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Inter", "SF Pro Display", system-ui, -apple-system,
+    BlinkMacSystemFont, sans-serif;
+  font-feature-settings: "cv11", "ss01", "cv02", "cv03", "cv04";
 }
 
-/* RTL utilities */
+/* Enhanced RTL utilities */
 .rtl {
   direction: rtl;
 }
@@ -67,7 +139,7 @@ body {
 
 /* Enhanced focus styles for accessibility */
 .focus-ring {
-  @apply focus:outline-none focus:ring-2 focus:ring-saudi-500 focus:ring-offset-2 focus:ring-offset-white;
+  @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-white;
 }
 
 /* Custom scrollbar styles */
@@ -121,8 +193,11 @@ body {
 
 /* Saudi-inspired patterns */
 .saudi-pattern {
-  background-image: 
-    radial-gradient(circle at 25% 25%, #059669 2px, transparent 2px),
+  background-image: radial-gradient(
+      circle at 25% 25%,
+      #059669 2px,
+      transparent 2px
+    ),
     radial-gradient(circle at 75% 75%, #f59e0b 1px, transparent 1px);
   background-size: 24px 24px;
   background-position: 0 0, 12px 12px;
@@ -163,7 +238,8 @@ body {
 }
 
 @keyframes bounce-gentle {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -172,7 +248,8 @@ body {
 }
 
 @keyframes pulse-glow {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 5px rgba(5, 150, 105, 0.5);
   }
   50% {
@@ -207,8 +284,12 @@ body {
     min-width: 44px;
     min-height: 44px;
   }
-  
-  button, [role="button"], input, select, textarea {
+
+  button,
+  [role="button"],
+  input,
+  select,
+  textarea {
     min-height: 44px;
   }
 }
@@ -219,11 +300,11 @@ body {
     background: rgba(255, 255, 255, 0.95);
     border: 2px solid #000;
   }
-  
+
   .text-gray-600 {
     @apply text-gray-900;
   }
-  
+
   .text-gray-500 {
     @apply text-gray-800;
   }
@@ -239,7 +320,7 @@ body {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  
+
   .fade-in-up,
   .slide-in-right,
   .slide-in-left,
@@ -254,30 +335,30 @@ body {
   .no-print {
     display: none !important;
   }
-  
+
   body {
     font-size: 12pt;
     line-height: 1.5;
     color: #000 !important;
     background: #fff !important;
   }
-  
+
   .glass,
   .glass-dark {
     background: #fff !important;
     backdrop-filter: none !important;
     border: 1px solid #ccc !important;
   }
-  
+
   /* Page breaks */
   .page-break-before {
     page-break-before: always;
   }
-  
+
   .page-break-after {
     page-break-after: always;
   }
-  
+
   .no-break {
     page-break-inside: avoid;
   }

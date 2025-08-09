@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "serve": "vite preview --port 3000",
     "lint": "eslint src --ext .ts,.tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
     "typecheck": "tsc --noEmit",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -17,14 +18,15 @@
     "cypress:run": "cypress run",
     "wrangler:dev": "wrangler pages dev dist --compatibility-date=2024-01-15",
     "wrangler:deploy": "wrangler pages deploy dist --project-name=idea-to-market-saudi",
-    "wrangler:deploy:staging": "wrangler pages deploy dist --project-name=idea-to-market-saudi-staging --env=staging",
-    "wrangler:deploy:production": "wrangler pages deploy dist --project-name=idea-to-market-saudi --env=production",
+    "wrangler:deploy:staging": "wrangler pages deploy dist --project-name=idea-to-market-saudi",
+    "wrangler:deploy:production": "wrangler pages deploy dist --project-name=idea-to-market-saudi",
     "functions:dev": "wrangler dev",
     "functions:deploy": "wrangler deploy",
     "cf:build": "npm run build && wrangler pages deploy dist",
     "cf:preview": "npm run build && wrangler pages dev dist",
     "deploy:staging": "npm run build && npm run wrangler:deploy:staging",
-    "deploy:production": "npm run build && npm run wrangler:deploy:production"
+    "deploy:production": "npm run build && npm run wrangler:deploy:production",
+    "deploy": "npm run deploy:production"
   },
   "dependencies": {
     "react": "^18.2.0",
