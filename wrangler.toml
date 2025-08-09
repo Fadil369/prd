@@ -1,0 +1,145 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "idea-to-market-saudi"
+main = "functions/_worker.js"
+compatibility_date = "2024-01-15"
+compatibility_flags = ["nodejs_compat"]
+
+# Cloudflare Pages configuration
+[pages]
+site = "idea-to-market-saudi"
+functions_dir = "functions"
+build_output_dir = "dist"
+routes = [
+  { pattern = "/api/*", custom_domain = true },
+  { pattern = "/*", custom_domain = false }
+]
+
+# Environment variables (development)
+[env.development]
+name = "idea-to-market-saudi-dev"
+vars = { 
+  ENVIRONMENT = "development",
+  DEBUG = "true",
+  API_BASE_URL = "https://dev-api.idea-to-market.sa",
+  FRONTEND_URL = "https://dev.idea-to-market.sa"
+}
+
+# Environment variables (staging)
+[env.staging]
+name = "idea-to-market-saudi-staging"
+vars = { 
+  ENVIRONMENT = "staging",
+  DEBUG = "false",
+  API_BASE_URL = "https://staging-api.idea-to-market.sa",
+  FRONTEND_URL = "https://staging.idea-to-market.sa"
+}
+
+# Environment variables (production)
+[env.production]
+name = "idea-to-market-saudi-prod"
+vars = { 
+  ENVIRONMENT = "production",
+  DEBUG = "false",
+  API_BASE_URL = "https://api.idea-to-market.sa",
+  FRONTEND_URL = "https://idea-to-market.sa"
+}
+
+# KV Storage for session and user data
+[[kv_namespaces]]
+binding = "USER_DATA"
+id = "your-user-data-kv-namespace-id"
+preview_id = "your-user-data-preview-namespace-id"
+
+[[kv_namespaces]]
+binding = "SESSIONS"
+id = "your-sessions-kv-namespace-id"
+preview_id = "your-sessions-preview-namespace-id"
+
+[[kv_namespaces]]
+binding = "CACHE"
+id = "your-cache-kv-namespace-id" 
+preview_id = "your-cache-preview-namespace-id"
+
+# D1 Database for structured data
+[[d1_databases]]
+binding = "DB"
+database_name = "idea-to-market-db"
+database_id = "your-d1-database-id"
+preview_database_id = "your-d1-preview-database-id"
+
+# R2 Storage for file uploads and generated content
+[[r2_buckets]]
+binding = "UPLOADS"
+bucket_name = "idea-to-market-uploads"
+preview_bucket_name = "idea-to-market-uploads-preview"
+
+[[r2_buckets]]
+binding = "GENERATED_CONTENT"
+bucket_name = "idea-to-market-generated"
+preview_bucket_name = "idea-to-market-generated-preview"
+
+# Durable Objects for real-time collaboration
+[[durable_objects.bindings]]
+name = "COLLABORATION_ROOMS"
+class_name = "CollaborationRoom"
+
+[[migrations]]
+tag = "v1"
+new_classes = ["CollaborationRoom"]
+
+# Analytics Engine for custom analytics
+[[analytics_engine_datasets]]
+binding = "ANALYTICS"
+
+# Queue for background processing
+[[queues]]
+binding = "BACKGROUND_TASKS"
+queue = "idea-to-market-tasks"
+
+# AI binding for Cloudflare AI models (fallback)
+[ai]
+binding = "AI"
+
+# Browser rendering for prototype screenshots
+[browser]
+binding = "BROWSER"
+
+# Hyperdrive for external database connections
+[[hyperdrive]]
+binding = "HYPERDRIVE"
+id = "your-hyperdrive-config-id"
+
+# Custom domains
+[env.production.route]
+pattern = "idea-to-market.sa/*"
+custom_domain = true
+
+[env.production.route]
+pattern = "www.idea-to-market.sa/*"  
+custom_domain = true
+
+# Build configuration
+[build]
+command = "npm run build"
+cwd = "."
+watch_dir = "src"
+
+# Deployment configuration
+[deployment]
+account_id = "your-cloudflare-account-id"
+compatibility_date = "2024-01-15"
+
+# Security headers
+[security]
+csrf = true
+cors = {
+  origins = ["https://idea-to-market.sa", "https://www.idea-to-market.sa"],
+  methods = ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  headers = ["Content-Type", "Authorization", "X-Requested-With"],
+  credentials = true
+}
+
+# Rate limiting
+[limits]
+cpu_ms = 50
+subrequests = 50

@@ -1,0 +1,51 @@
+# Cloudflare Pages Custom Headers for Idea to Market Saudi
+
+# Security Headers for all routes
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(self), microphone=(), camera=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.anthropic.com https://api.idea-to-market.sa https://www.google-analytics.com; frame-ancestors 'none'; upgrade-insecure-requests
+
+# Cache static assets
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache images
+/images/*
+  Cache-Control: public, max-age=86400
+
+/icons/*
+  Cache-Control: public, max-age=31536000
+
+# PWA files
+/manifest.json
+  Cache-Control: public, max-age=86400
+  Content-Type: application/manifest+json
+
+/sw.js
+  Cache-Control: no-cache
+
+# API routes - no cache
+/api/*
+  Cache-Control: no-store
+  X-Robots-Tag: noindex
+
+# Arabic language header for Arabic pages
+/ar/*
+  Content-Language: ar
+  X-Content-Language: ar-SA
+
+# English language header for English pages  
+/en/*
+  Content-Language: en
+  X-Content-Language: en-US
+
+# Saudi Arabia specific headers
+/*
+  X-Country-Code: SA
+  X-Currency: SAR
+  X-Timezone: Asia/Riyadh

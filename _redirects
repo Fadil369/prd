@@ -1,0 +1,47 @@
+# Cloudflare Pages Redirects for Idea to Market Saudi
+
+# API routes to Cloudflare Workers
+/api/* https://idea-to-market-saudi.brainsait.workers.dev/api/:splat 200
+
+# Language-based redirects
+/ar/* /index.html 200
+/en/* /index.html 200
+
+# SEO friendly URLs
+/brainstorm /index.html?step=1 200
+/prd /index.html?step=2 200
+/prototype /index.html?step=3 200
+/pricing /index.html?section=pricing 200
+/features /index.html?section=features 200
+
+# Arabic SEO URLs
+/عصف-افكار /index.html?step=1&lang=ar 200
+/انشاء-مستند /index.html?step=2&lang=ar 200
+/النموذج-الاولي /index.html?step=3&lang=ar 200
+/الاسعار /index.html?section=pricing&lang=ar 200
+
+# Payment redirects
+/payment/success /index.html?payment=success 200
+/payment/cancel /index.html?payment=cancel 200
+/payment/error /index.html?payment=error 200
+
+# Social sharing redirects
+/share/:id /index.html?share=:id 200
+
+# Legacy redirects
+/old-app/* /index.html 301
+/legacy/* / 301
+
+# Force HTTPS
+http://idea-to-market.sa/* https://idea-to-market.sa/:splat 301!
+http://www.idea-to-market.sa/* https://idea-to-market.sa/:splat 301!
+
+# Canonical domain redirect
+https://www.idea-to-market.sa/* https://idea-to-market.sa/:splat 301!
+
+# Development redirects (for staging)
+https://dev.idea-to-market.sa/api/* https://idea-to-market-saudi-dev.brainsait.workers.dev/api/:splat 200
+https://staging.idea-to-market.sa/api/* https://idea-to-market-saudi-staging.brainsait.workers.dev/api/:splat 200
+
+# 404 fallback
+/* /index.html 200
