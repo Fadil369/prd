@@ -1,199 +1,303 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/saudi-icon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5" />
-  
-  <!-- Primary Meta Tags -->
-  <title>من الفكرة إلى السوق | Idea to Market - منصة ذكية لرواد الأعمال السعوديين</title>
-  <meta name="title" content="من الفكرة إلى السوق | Idea to Market - منصة ذكية لرواد الأعمال السعوديين">
-  <meta name="description" content="حوّل فكرتك إلى منتج قابل للتسويق بثلاث خطوات بسيطة. منصة مدعومة بالذكاء الاصطناعي لرواد الأعمال السعوديين - عصف أفكار، إنشاء مستند المتطلبات، وبناء النموذج الأولي.">
-  <meta name="keywords" content="رواد الأعمال السعوديين, الذكاء الاصطناعي, نموذج أولي, مستند متطلبات المنتج, عصف أفكار, ريادة الأعمال, رؤية 2030, startup saudi arabia, entrepreneurs, ai prototype">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://idea-to-market.sa/">
-  <meta property="og:title" content="من الفكرة إلى السوق | Idea to Market">
-  <meta property="og:description" content="حوّل فكرتك إلى منتج قابل للتسويق بثلاث خطوات بسيطة. منصة مدعومة بالذكاء الاصطناعي لرواد الأعمال السعوديين.">
-  <meta property="og:image" content="https://idea-to-market.sa/og-image-ar.png">
-  <meta property="og:locale" content="ar_SA">
-  <meta property="og:locale:alternate" content="en_US">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/saudi-icon.svg" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5"
+    />
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://idea-to-market.sa/">
-  <meta property="twitter:title" content="من الفكرة إلى السوق | Idea to Market">
-  <meta property="twitter:description" content="حوّل فكرتك إلى منتج قابل للتسويق بثلاث خطوات بسيطة. منصة مدعومة بالذكاء الاصطناعي لرواد الأعمال السعوديين.">
-  <meta property="twitter:image" content="https://idea-to-market.sa/twitter-image-ar.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Preconnect to external domains -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://api.anthropic.com">
-  
-  <!-- Arabic and English Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- PWA Meta Tags -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="Idea2Market">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="msapplication-TileColor" content="#059669">
-  <meta name="theme-color" content="#059669">
-  
-  <!-- Apple Touch Icons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  
-  <!-- Saudi Arabia & Arabic Specific -->
-  <meta name="geo.region" content="SA">
-  <meta name="geo.placename" content="Saudi Arabia">
-  <meta name="geo.position" content="24.7136;46.6753">
-  <meta name="ICBM" content="24.7136, 46.6753">
-  
-  <!-- Performance & Security -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  
-  <!-- Structured Data for Saudi Business -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "من الفكرة إلى السوق",
-    "alternateName": "Idea to Market",
-    "description": "منصة مدعومة بالذكاء الاصطناعي لرواد الأعمال السعوديين لتحويل الأفكار إلى منتجات قابلة للتسويق",
-    "applicationCategory": "BusinessApplication", 
-    "operatingSystem": "Web Browser",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "SAR",
-      "priceValidUntil": "2025-12-31"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating", 
-      "ratingValue": "4.8",
-      "reviewCount": "127"
-    },
-    "inLanguage": ["ar", "en"],
-    "availableCountry": "SA",
-    "publisher": {
-      "@type": "Organization",
-      "name": "BrainSAIT",
-      "url": "https://brainsait.com"
-    }
-  }
-  </script>
-  
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX', {
-      page_title: 'من الفكرة إلى السوق - الصفحة الرئيسية',
-      custom_map: {'custom_parameter_1': 'saudi_user'}
-    });
-  </script>
-  
-  <!-- Critical CSS Inlined (Tailwind base) -->
-  <style>
-    /* Critical CSS for first paint */
-    *,::before,::after{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}
-    html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif}
-    body{margin:0;line-height:inherit}
-    .arabic-font{font-family:Cairo,Tajawal,system-ui,sans-serif}
-    .english-font{font-family:Inter,system-ui,sans-serif}
-    [dir="rtl"]{direction:rtl}
-    [dir="ltr"]{direction:ltr}
-    
-    /* Loading screen */
-    .loading-screen{
-      position:fixed;
-      top:0;
-      left:0;
-      width:100vw;
-      height:100vh;
-      background:linear-gradient(135deg,#f0fdf4 0%,#dcfce7 100%);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      z-index:9999;
-      transition:opacity 0.5s ease;
-    }
-    .loading-spinner{
-      width:40px;
-      height:40px;
-      border:3px solid #e5e7eb;
-      border-top:3px solid #059669;
-      border-radius:50%;
-      animation:spin 1s linear infinite;
-    }
-    @keyframes spin{
-      0%{transform:rotate(0deg)}
-      100%{transform:rotate(360deg)}
-    }
-  </style>
-</head>
-<body class="antialiased">
-  <!-- Loading Screen -->
-  <div id="loading-screen" class="loading-screen">
-    <div class="loading-spinner"></div>
-  </div>
-  
-  <!-- Skip to main content for accessibility -->
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-saudi-600 text-white px-4 py-2 rounded-md z-50">
-    انتقل إلى المحتوى الرئيسي - Skip to main content
-  </a>
-  
-  <!-- React App Root -->
-  <div id="root"></div>
-  
-  <!-- Vite App Entry Point -->
-  <script type="module" src="/src/main.tsx"></script>
-  
-  <!-- Remove loading screen once app loads -->
-  <script>
-    window.addEventListener('load', function() {
-      const loadingScreen = document.getElementById('loading-screen');
-      if (loadingScreen) {
-        loadingScreen.style.opacity = '0';
-        setTimeout(() => {
-          loadingScreen.style.display = 'none';
-        }, 500);
+    <!-- Primary Meta Tags -->
+    <title>
+      من الأفكار إلى الابتكار | Ideas to Innovation - منصة ذكية لرواد الأعمال
+      السعوديين
+    </title>
+    <meta
+      name="title"
+      content="من الأفكار إلى الابتكار | Ideas to Innovation - منصة ذكية لرواد الأعمال السعوديين"
+    />
+    <meta
+      name="description"
+      content="حوّل أفكارك إلى ابتكارات حقيقية بثلاث خطوات بسيطة. منصة مدعومة بالذكاء الاصطناعي لرواد الأعمال السعوديين - الإبداع والابتكار، إنشاء مستند المتطلبات، وبناء النماذج الأولية المتقدمة."
+    />
+    <meta
+      name="keywords"
+      content="رواد الأعمال السعوديين, الابتكار, الذكاء الاصطناعي, نموذج أولي, الإبداع, ريادة الأعمال, رؤية 2030, startup saudi arabia, innovation, ai prototype, entrepreneurs"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://idea-to-market.sa/" />
+    <meta property="og:title" content="من الفكرة إلى السوق | Idea to Market" />
+    <meta
+      property="og:description"
+      content="حوّل فكرتك إلى منتج قابل للتسويق بثلاث خطوات بسيطة. منصة مدعومة بالذكاء الاصطناعي لرواد الأعمال السعوديين."
+    />
+    <meta
+      property="og:image"
+      content="https://idea-to-market.sa/og-image-ar.png"
+    />
+    <meta property="og:locale" content="ar_SA" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://idea-to-market.sa/" />
+    <meta
+      property="twitter:title"
+      content="من الفكرة إلى السوق | Idea to Market"
+    />
+    <meta
+      property="twitter:description"
+      content="حوّل فكرتك إلى منتج قابل للتسويق بثلاث خطوات بسيطة. منصة مدعومة بالذكاء الاصطناعي لرواد الأعمال السعوديين."
+    />
+    <meta
+      property="twitter:image"
+      content="https://idea-to-market.sa/twitter-image-ar.png"
+    />
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://api.anthropic.com" />
+
+    <!-- Arabic and English Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Idea2Market" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="msapplication-TileColor" content="#059669" />
+    <meta name="theme-color" content="#059669" />
+
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+    <!-- Saudi Arabia & Arabic Specific -->
+    <meta name="geo.region" content="SA" />
+    <meta name="geo.placename" content="Saudi Arabia" />
+    <meta name="geo.position" content="24.7136;46.6753" />
+    <meta name="ICBM" content="24.7136, 46.6753" />
+
+    <!-- Performance & Security -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <!-- Structured Data for Saudi Business -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "من الفكرة إلى السوق",
+        "alternateName": "Idea to Market",
+        "description": "منصة مدعومة بالذكاء الاصطناعي لرواد الأعمال السعوديين لتحويل الأفكار إلى منتجات قابلة للتسويق",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "SAR",
+          "priceValidUntil": "2025-12-31"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "reviewCount": "127"
+        },
+        "inLanguage": ["ar", "en"],
+        "availableCountry": "SA",
+        "publisher": {
+          "@type": "Organization",
+          "name": "BrainSAIT",
+          "url": "https://brainsait.com"
+        }
       }
-    });
-    
-    // Handle offline/online status
-    window.addEventListener('online', function() {
-      document.body.classList.remove('offline');
-    });
-    
-    window.addEventListener('offline', function() {
-      document.body.classList.add('offline');
-    });
-  </script>
-  
-  <!-- Service Worker Registration -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js')
-          .then(function(registration) {
-            console.log('SW registered: ', registration);
-          })
-          .catch(function(registrationError) {
-            console.log('SW registration failed: ', registrationError);
-          });
+    </script>
+
+    <!-- Google Analytics 4 -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-XXXXXXXXXX", {
+        page_title: "من الفكرة إلى السوق - الصفحة الرئيسية",
+        custom_map: { custom_parameter_1: "saudi_user" },
       });
-    }
-  </script>
-</body>
+    </script>
+
+    <!-- Critical CSS Inlined (Tailwind base) -->
+    <style>
+      /* Critical CSS for first paint */
+      *,
+      ::before,
+      ::after {
+        box-sizing: border-box;
+        border-width: 0;
+        border-style: solid;
+        border-color: #e5e7eb;
+      }
+      html {
+        line-height: 1.5;
+        -webkit-text-size-adjust: 100%;
+        -moz-tab-size: 4;
+        tab-size: 4;
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      }
+      body {
+        margin: 0;
+        line-height: inherit;
+      }
+      .arabic-font {
+        font-family: Cairo, Tajawal, system-ui, sans-serif;
+      }
+      .english-font {
+        font-family: Inter, system-ui, sans-serif;
+      }
+      [dir="rtl"] {
+        direction: rtl;
+      }
+      [dir="ltr"] {
+        direction: ltr;
+      }
+
+      /* Loading screen */
+      .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease;
+      }
+      .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid #e5e7eb;
+        border-top: 3px solid #059669;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+      <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Skip to main content for accessibility -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-saudi-600 text-white px-4 py-2 rounded-md z-50"
+    >
+      انتقل إلى المحتوى الرئيسي - Skip to main content
+    </a>
+
+    <!-- React App Root -->
+    <div id="root"></div>
+    <div data-testid="offline-indicator" class="offline-indicator"></div>
+
+    <!-- Vite App Entry Point -->
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Remove loading screen once app loads -->
+    <script>
+      window.addEventListener("load", function () {
+        const loadingScreen = document.getElementById("loading-screen");
+        if (loadingScreen) {
+          loadingScreen.style.opacity = "0";
+          setTimeout(() => {
+            loadingScreen.style.display = "none";
+          }, 500);
+        }
+        // initialize offline indicator state
+        var el = document.querySelector('[data-testid="offline-indicator"]');
+        if (el) el.style.display = navigator.onLine ? "none" : "block";
+        if (!navigator.onLine) {
+          document.body.classList.add("offline");
+        }
+      });
+
+      // Handle offline/online status with immediate check and polling fallback
+      function updateOfflineIndicator() {
+        var offline =
+          typeof navigator !== "undefined" && navigator.onLine === false;
+        if (offline) {
+          document.body.classList.add("offline");
+        } else {
+          document.body.classList.remove("offline");
+        }
+        var el = document.querySelector('[data-testid="offline-indicator"]');
+        if (el) {
+          el.style.display = offline ? "block" : "none";
+        }
+      }
+      window.addEventListener("online", updateOfflineIndicator);
+      window.addEventListener("offline", updateOfflineIndicator);
+      // Initial state
+      updateOfflineIndicator();
+      // Poll as fallback for environments that don't dispatch events (e.g., some test runners)
+      setInterval(updateOfflineIndicator, 1000);
+    </script>
+
+    <!-- Service Worker Registration -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker
+            .register("/sw.js")
+            .then(function (registration) {
+              console.log("SW registered: ", registration);
+            })
+            .catch(function (registrationError) {
+              console.log("SW registration failed: ", registrationError);
+            });
+        });
+      }
+    </script>
+  </body>
 </html>

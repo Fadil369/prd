@@ -1,19 +1,19 @@
-import React from 'react';
+import React from "react";
 
 interface CardProps {
   children: React.ReactNode;
   className?: string;
-  variant?: 'default' | 'elevated' | 'outlined' | 'glass';
-  padding?: 'none' | 'sm' | 'md' | 'lg' | 'xl';
+  variant?: "default" | "elevated" | "outlined" | "glass";
+  padding?: "none" | "sm" | "md" | "lg" | "xl";
   hover?: boolean;
 }
 
 const Card: React.FC<CardProps> = ({
   children,
-  className = '',
-  variant = 'default',
-  padding = 'md',
-  hover = false
+  className = "",
+  variant = "default",
+  padding = "md",
+  hover = false,
 }) => {
   const baseClasses = `
     rounded-2xl transition-all duration-300
@@ -37,22 +37,24 @@ const Card: React.FC<CardProps> = ({
   glass backdrop-blur-xl
   border border-white/20 dark:border-white/10
   bg-white/10 dark:bg-white/5
-    `
+    `,
   };
 
   const paddingClasses = {
-    none: '',
-    sm: 'p-4',
-    md: 'p-6',
-    lg: 'p-8',
-    xl: 'p-12'
+    none: "",
+    sm: "p-4",
+    md: "p-6",
+    lg: "p-8",
+    xl: "p-12",
   };
 
-  const hoverClasses = hover ? `
+  const hoverClasses = hover
+    ? `
     hover:shadow-soft-lg hover:scale-[1.02]
     hover:border-primary-200
     cursor-pointer
-  ` : '';
+  `
+    : "";
 
   const combinedClasses = `
     ${baseClasses}
@@ -60,13 +62,11 @@ const Card: React.FC<CardProps> = ({
     ${paddingClasses[padding]}
     ${hoverClasses}
     ${className}
-  `.trim().replace(/\s+/g, ' ');
+  `
+    .trim()
+    .replace(/\s+/g, " ");
 
-  return (
-    <div className={combinedClasses}>
-      {children}
-    </div>
-  );
+  return <div className={combinedClasses}>{children}</div>;
 };
 
 export default Card;

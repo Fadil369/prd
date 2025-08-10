@@ -8,3 +8,18 @@ pages_build_output_dir = "dist"
 # Environment variables
 [vars]
 ENVIRONMENT = "production"
+APP_NAME = "Ideas to Innovation"
+APP_VERSION = "1.0.0"
+SAUDI_TIMEZONE = "Asia/Riyadh"
+DEFAULT_LOCALE = "ar-SA"
+SUPPORTED_LOCALES = "ar-SA,en-US"
+
+# Production environment
+[env.production]
+name = "idea-to-market-saudi"
+vars = { ENVIRONMENT = "production", DEBUG = "false" }
+
+# Preview environment (Pages uses "preview" instead of "staging")
+[env.preview]
+name = "idea-to-market-saudi-preview"
+vars = { ENVIRONMENT = "preview", DEBUG = "true" }

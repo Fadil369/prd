@@ -1,7 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App.tsx';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.tsx";
+import "./index.css";
 
 // Error boundary for production
 class ErrorBoundary extends React.Component<
@@ -18,13 +18,13 @@ class ErrorBoundary extends React.Component<
   }
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.error('App Error:', error, errorInfo);
-    
+    console.error("App Error:", error, errorInfo);
+
     // Track error in analytics
-    if (typeof window !== 'undefined' && 'gtag' in window) {
-      (window as any).gtag('event', 'exception', {
+    if (typeof window !== "undefined" && "gtag" in window) {
+      (window as any).gtag("event", "exception", {
         description: error.toString(),
-        fatal: false
+        fatal: false,
       });
     }
   }
@@ -57,9 +57,9 @@ class ErrorBoundary extends React.Component<
 }
 
 // Create root and render app
-const rootElement = document.getElementById('root');
+const rootElement = document.getElementById("root");
 if (!rootElement) {
-  throw new Error('Root element not found');
+  throw new Error("Root element not found");
 }
 
 const root = ReactDOM.createRoot(rootElement);

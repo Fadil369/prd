@@ -1,20 +1,21 @@
-import React from 'react';
+import React from "react";
 
-interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+interface TextareaProps
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   label?: string;
   error?: string;
   hint?: string;
-  variant?: 'default' | 'filled' | 'outlined';
-  resize?: 'none' | 'vertical' | 'horizontal' | 'both';
+  variant?: "default" | "filled" | "outlined";
+  resize?: "none" | "vertical" | "horizontal" | "both";
 }
 
 const Textarea: React.FC<TextareaProps> = ({
   label,
   error,
   hint,
-  variant = 'default',
-  resize = 'vertical',
-  className = '',
+  variant = "default",
+  resize = "vertical",
+  className = "",
   id,
   ...props
 }) => {
@@ -47,20 +48,22 @@ const Textarea: React.FC<TextareaProps> = ({
   bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100
   focus:border-primary-500 focus:ring-primary-500
   hover:border-neutral-400 dark:hover:border-neutral-600
-    `
+    `,
   };
 
   const resizeClasses = {
-    none: 'resize-none',
-    vertical: 'resize-y',
-    horizontal: 'resize-x',
-    both: 'resize'
+    none: "resize-none",
+    vertical: "resize-y",
+    horizontal: "resize-x",
+    both: "resize",
   };
 
-  const errorClasses = error ? `
+  const errorClasses = error
+    ? `
     border-red-300 focus:border-red-500 focus:ring-red-500
     bg-red-50
-  ` : '';
+  `
+    : "";
 
   const combinedClasses = `
     ${baseClasses}
@@ -68,35 +71,29 @@ const Textarea: React.FC<TextareaProps> = ({
     ${resizeClasses[resize]}
     ${errorClasses}
     ${className}
-  `.trim().replace(/\s+/g, ' ');
+  `
+    .trim()
+    .replace(/\s+/g, " ");
 
   return (
     <div className="w-full">
       {label && (
-        <label 
+        <label
           htmlFor={inputId}
           className="block text-sm font-medium text-neutral-700 mb-2"
         >
           {label}
         </label>
       )}
-      
-      <textarea
-        id={inputId}
-        className={combinedClasses}
-        {...props}
-      />
-      
+
+      <textarea id={inputId} className={combinedClasses} {...props} />
+
       {error && (
-        <p className="mt-2 text-sm text-red-600 animate-fade-in">
-          {error}
-        </p>
+        <p className="mt-2 text-sm text-red-600 animate-fade-in">{error}</p>
       )}
-      
+
       {hint && !error && (
-        <p className="mt-2 text-sm text-neutral-500">
-          {hint}
-        </p>
+        <p className="mt-2 text-sm text-neutral-500">{hint}</p>
       )}
     </div>
   );

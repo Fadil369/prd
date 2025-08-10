@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   error?: string;
   hint?: string;
-  variant?: 'default' | 'filled' | 'outlined';
+  variant?: "default" | "filled" | "outlined";
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
 }
@@ -13,10 +13,10 @@ const Input: React.FC<InputProps> = ({
   label,
   error,
   hint,
-  variant = 'default',
+  variant = "default",
   leftIcon,
   rightIcon,
-  className = '',
+  className = "",
   id,
   ...props
 }) => {
@@ -49,18 +49,20 @@ const Input: React.FC<InputProps> = ({
   bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100
   focus:border-primary-500 focus:ring-primary-500
   hover:border-neutral-400 dark:hover:border-neutral-600
-    `
+    `,
   };
 
   const iconPadding = {
-    left: leftIcon ? 'ps-12' : '',
-    right: rightIcon ? 'pe-12' : ''
+    left: leftIcon ? "ps-12" : "",
+    right: rightIcon ? "pe-12" : "",
   };
 
-  const errorClasses = error ? `
+  const errorClasses = error
+    ? `
     border-red-300 focus:border-red-500 focus:ring-red-500
     bg-red-50
-  ` : '';
+  `
+    : "";
 
   const combinedClasses = `
     ${baseClasses}
@@ -69,49 +71,43 @@ const Input: React.FC<InputProps> = ({
     ${iconPadding.right}
     ${errorClasses}
     ${className}
-  `.trim().replace(/\s+/g, ' ');
+  `
+    .trim()
+    .replace(/\s+/g, " ");
 
   return (
     <div className="w-full">
       {label && (
-        <label 
+        <label
           htmlFor={inputId}
           className="block text-sm font-medium text-neutral-700 mb-2"
         >
           {label}
         </label>
       )}
-      
+
       <div className="relative">
         {leftIcon && (
           <div className="absolute start-0 top-0 h-full w-12 flex items-center justify-center text-neutral-400">
             {leftIcon}
           </div>
         )}
-        
-        <input
-          id={inputId}
-          className={combinedClasses}
-          {...props}
-        />
-        
+
+        <input id={inputId} className={combinedClasses} {...props} />
+
         {rightIcon && (
           <div className="absolute end-0 top-0 h-full w-12 flex items-center justify-center text-neutral-400">
             {rightIcon}
           </div>
         )}
       </div>
-      
+
       {error && (
-        <p className="mt-2 text-sm text-red-600 animate-fade-in">
-          {error}
-        </p>
+        <p className="mt-2 text-sm text-red-600 animate-fade-in">{error}</p>
       )}
-      
+
       {hint && !error && (
-        <p className="mt-2 text-sm text-neutral-500">
-          {hint}
-        </p>
+        <p className="mt-2 text-sm text-neutral-500">{hint}</p>
       )}
     </div>
   );

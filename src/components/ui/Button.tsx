@@ -1,24 +1,24 @@
-import React from 'react';
-import { Loader2 } from 'lucide-react';
+import { Loader2 } from "lucide-react";
+import React from "react";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'destructive';
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  variant?: "primary" | "secondary" | "outline" | "ghost" | "destructive";
+  size?: "sm" | "md" | "lg" | "xl";
   isLoading?: boolean;
   icon?: React.ReactNode;
-  iconPosition?: 'left' | 'right';
+  iconPosition?: "left" | "right";
   fullWidth?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
-  variant = 'primary',
-  size = 'md',
+  variant = "primary",
+  size = "md",
   isLoading = false,
   icon,
-  iconPosition = 'left',
+  iconPosition = "left",
   fullWidth = false,
   children,
-  className = '',
+  className = "",
   disabled,
   ...props
 }) => {
@@ -67,17 +67,17 @@ const Button: React.FC<ButtonProps> = ({
       focus:ring-red-500
       hover:shadow-soft-lg hover:scale-[1.02]
       active:scale-[0.98]
-    `
+    `,
   };
 
   const sizeClasses = {
-    sm: 'px-3 py-2 text-sm gap-2',
-    md: 'px-4 py-3 text-base gap-2',
-    lg: 'px-6 py-4 text-lg gap-3',
-    xl: 'px-8 py-5 text-xl gap-3'
+    sm: "px-3 py-2 text-sm gap-2",
+    md: "px-4 py-3 text-base gap-2",
+    lg: "px-6 py-4 text-lg gap-3",
+    xl: "px-8 py-5 text-xl gap-3",
   };
 
-  const widthClass = fullWidth ? 'w-full' : '';
+  const widthClass = fullWidth ? "w-full" : "";
 
   const combinedClasses = `
     ${baseClasses}
@@ -85,7 +85,9 @@ const Button: React.FC<ButtonProps> = ({
     ${sizeClasses[size]}
     ${widthClass}
     ${className}
-  `.trim().replace(/\s+/g, ' ');
+  `
+    .trim()
+    .replace(/\s+/g, " ");
 
   const iconElement = isLoading ? (
     <Loader2 className="h-4 w-4 animate-spin" />
@@ -99,9 +101,9 @@ const Button: React.FC<ButtonProps> = ({
       disabled={disabled || isLoading}
       {...props}
     >
-      {iconElement && iconPosition === 'left' && iconElement}
+      {iconElement && iconPosition === "left" && iconElement}
       {children && <span className="flex-1">{children}</span>}
-      {iconElement && iconPosition === 'right' && iconElement}
+      {iconElement && iconPosition === "right" && iconElement}
     </button>
   );
 };

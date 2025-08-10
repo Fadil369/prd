@@ -1,4 +1,4 @@
-# Cloudflare Pages Custom Headers for Idea to Market Saudi
+# Cloudflare Pages Custom Headers for Ideas to Innovation Saudi
 
 # Security Headers for all routes
 /*
@@ -8,6 +8,9 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(self), microphone=(), camera=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Saudi-Platform: Vision-2030-Aligned
+  X-Arabic-Support: RTL-Enabled
+  X-Locale-Support: ar-SA,en-US
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.anthropic.com https://api.idea-to-market.sa https://www.google-analytics.com; frame-ancestors 'none'; upgrade-insecure-requests
 
 # Cache static assets
@@ -39,7 +42,7 @@
   Content-Language: ar
   X-Content-Language: ar-SA
 
-# English language header for English pages  
+# English language header for English pages
 /en/*
   Content-Language: en
   X-Content-Language: en-US

@@ -1,6 +1,6 @@
 /* Import Google Fonts with optimal loading */
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -345,8 +345,8 @@ body {
   .glass,
   .glass-dark {
     background: #fff !important;
-  -webkit-backdrop-filter: none !important;
-  backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
     border: 1px solid #ccc !important;
   }
 
