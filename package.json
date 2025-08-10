@@ -59,8 +59,8 @@
     "@typescript-eslint/parser": "^6.10.0",
     "@vitejs/plugin-react": "^4.1.1",
     "typescript": "^5.2.2",
-    "vite": "^5.0.0",
-    "vite-plugin-pwa": "^0.17.4",
+    "vite": "^7.1.1",
+    "vite-plugin-pwa": "^1.0.2",
     "eslint": "^8.53.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
@@ -70,7 +70,7 @@
     "@testing-library/jest-dom": "^6.1.5",
     "cypress": "^13.6.0",
     "@playwright/test": "^1.40.0",
-    "wrangler": "^3.22.1",
+    "wrangler": "^4.28.1",
     "hono": "^4.0.0"
   },
   "keywords": [
